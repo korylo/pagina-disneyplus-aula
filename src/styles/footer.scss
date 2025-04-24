@@ -1,0 +1,74 @@
+@use 'variaveis';
+
+.footer {
+    &__container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 30px;
+
+        @media (max-width: 767px) {
+            width: 95%;
+        }
+
+    }
+    
+    &__logo {
+        width: 80px;
+        margin: 0 auto 10px;
+    }
+
+    &__links {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__item {
+            display: inline-block;
+
+            a {
+                list-style-type: none;
+                padding: 8px 16px;
+                text-decoration: none;
+                display: block;
+
+                &:hover {
+                    color: variaveis.$cortextosecundario;
+                }
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 16px;
+    }
+}
+
+.linguage-select {
+    display: flex;
+    align-items: center;
+    img {
+        width: 18px;
+        height: 18px;
+    }
+
+    select {
+        background-color: transparent;
+        border: none;
+        color: variaveis.$cortextoprincipal;
+        cursor: pointer;
+        height: 38px;
+
+        &:hover {
+            color: variaveis.$cortextosecundario;
+        }
+
+        option {
+            color: variaveis.$cordefundo;
+        }
+    }
+
+}

@@ -1,0 +1,29 @@
+.available-devices {
+  padding: 2vw 5.6vw;
+
+  &__list {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 80px;
+    text-align: center;
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 40px; // Ajustando a margem para telas pequenas
+    }
+  }
+
+  img {
+    max-width: 100%;
+    display: block; // Para garantir que a imagem não cause um pequeno espaçamento abaixo dela
+  }
+
+  &__text_container {
+    padding: 0 2vw;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+  }
+}

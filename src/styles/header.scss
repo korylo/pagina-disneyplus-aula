@@ -1,0 +1,49 @@
+@use "variaveis";
+
+.header {
+  background-color: #040714; // Azul escuro Disney
+  padding: 16px 32px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__links {
+    display: flex;
+    gap: 16px;
+
+    &__item {
+      list-style: none;
+
+      .button {
+        padding: 8px 16px;
+        border: 2px solid #fff; // Contorno branco
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+        transition: 0.3s;
+        color: #fff;
+      }
+
+      .button--secondary {
+        background-color: #0063e5;
+
+        &:hover {
+          background-color: #0483ee;
+        }
+      }
+
+      .button--dark {
+        background-color: transparent;
+        color: #fff;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+}

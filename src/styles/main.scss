@@ -1,0 +1,185 @@
+@use "variaveis";
+@use "hero";
+@use "shows";
+@use "plans";
+@use "available-devices";
+@use "faq";
+@use "footer";
+@use "header";
+
+@font-face {
+  font-family: avenir;
+  font-weight: 400;
+  src: url(../../Fonts/fonts/Avenir-Regular.woff2);
+}
+
+@font-face {
+  font-family: avenir;
+  font-weight: 700;
+  src: url(../../Fonts/fonts/Avenir-Bold.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: variaveis.$cordefundo;
+  font-family: avenir, sans-serif;
+}
+
+@mixin text($fontsize: 16px) {
+  font-size: $fontsize;
+  line-height: $fontsize + 10px;
+  color: variaveis.$cortextoprincipal;
+}
+
+@mixin title($fontsize: 28px) {
+  @include text($fontsize);
+  color: variaveis.$cortextosecundario;
+}
+
+.text--big {
+  @include text(18px);
+
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.text {
+  @include text;
+}
+
+.text--small {
+  @include text(12px);
+}
+
+.title--big {
+  @include title(44px);
+
+  @media (max-width: 767px) {
+    @include title(26px);
+  }
+}
+
+.title {
+  @include title(40px);
+  text-align: center;
+
+  @media (max-width: 767px) {
+    @include title(24px);
+    margin-top: 40px;
+  }
+}
+
+.title--small {
+  @include title(28px);
+
+  @media (max-width: 767px) {
+    @include title(22px);
+  }
+}
+
+.link--text {
+  @include title(18px);
+  color: variaveis.$cortextosecundario;
+  text-decoration: underline;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  background-color: variaveis.$cordefundobotaoprimario;
+  color: variaveis.$cortextoprincipal;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 8px 14px;
+  letter-spacing: 1px;
+  border: 1px solid variaveis.$cordefundobotaoprimario;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(variaveis.$cordefundobotaoprimario, 3%);
+  }
+
+  &--secondary {
+    background-color: variaveis.$cordefundobotaosecundario;
+    border-color: variaveis.$cordefundobotaosecundario;
+
+    &:hover {
+      background-color: lighten(variaveis.$cordefundobotaosecundario, 3%);
+    }
+  }
+
+  &--dark {
+    background-color: rgba(variaveis.$cordefundobotaodark, 0.8);
+    border-color: variaveis.$cortextosecundario;
+
+    &:hover {
+      background-color: variaveis.$cortextosecundario;
+      color: variaveis.$cordefundo;
+    }
+  }
+}
+
+.image-text-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 2vw 5.6vw;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  &__text_container {
+    padding: 0 2vw;
+
+    h2 {
+      margin-bottom: 24px;
+
+      @media (max-width: 767px) {
+        text-align: center;
+      }
+    }
+  }
+
+  &--image-full-width {
+    display: block;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    &__text_container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: calc(50% - 5.6vw);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (max-width: 767px) {
+        position: relative;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
